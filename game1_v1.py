@@ -30,13 +30,12 @@ def right_click(event):
 def create_ball(x, y, r, color, vx, vy):
     ball_id = [battlefield.create_oval(x, y, x + r, y + r, fill=color), vx, vy]
     objects.append(ball_id)
-    b = Ball(ball_id, x, y, r, color, vx, vy)
     return ball_id
 
 
 class Ball:
-    def __init__(self, ball_id, x, y, r, color, vx, vy):
-        self.ball_id = ball_id
+    def __init__(self, x, y, r, color, vx, vy):
+        # self.ball_id =
         self.y = y
         self.x = x
         self.vy = vy
@@ -45,8 +44,8 @@ class Ball:
         self.color = color
 
     @classmethod
-    def create(cls, ball_id, x, y, r, color, vx, vy):
-        return cls.__init__(ball_id, x, y, r, color, vx, vy)
+    def create(cls, x, y, r, color, vx, vy):
+        return cls.__init__(x, y, r, color, vx, vy)
 
 
 def update(ball):
